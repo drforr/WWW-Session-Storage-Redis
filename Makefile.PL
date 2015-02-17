@@ -17,6 +17,7 @@ WriteMakefile(
 		'Test::Exception'	=> 0,
 		'Test::Deep'	=> 0,
 		'JSON'	=> 0,
+		'WWW::Session'	=> 0,
 		'Cache::Redis'	=> 0,
 		'Storable'	=> 0,
     },

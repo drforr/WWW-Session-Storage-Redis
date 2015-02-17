@@ -23,16 +23,16 @@ Redis backend for WWW::Session
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
 
-This module is used for storring serialized WWW::Session objects in redis
+This module is used for storing serialized WWW::Session objects in redis
 
 Usage : 
 
