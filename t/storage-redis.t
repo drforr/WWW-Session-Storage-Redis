@@ -13,9 +13,10 @@ SKIP: {
 	
 	use_ok('WWW::Session::Storage::Redis');
 
-	my $storage = WWW::Session::Storage::Redis->new({server => "127.0.0.1:5379"});
+	my $storage;
+        eval { $storage = WWW::Session::Storage::Redis->new({server => "127.0.0.1:5379"}) };
 	
-	skip "Redis server is not running on 127.0.0.1:6379", 12 unless $storage->{redis}->set('www_session_test','123',1);
+	skip "Redis server is not running on 127.0.0.1:6379", 12 if $@;
 
 	{	
 		my $sid = 'test1';
@@ -54,7 +55,6 @@ SKIP: {
 		$rstring = $storage->retrieve($sid);
 		is($rstring,undef,"Session data removed after destory()");
 	}
-
 
 	{
 		my $sid = 'test3';

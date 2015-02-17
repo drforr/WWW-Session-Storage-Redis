@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 BEGIN {
-    eval "use Cache::Redis;";
+    eval "use Cache::Redis;"; ## no critic
     
     if ($@) {
         warn "You must install the Cache::Redis module from CPAN to use the redis storage engine!"
